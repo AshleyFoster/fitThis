@@ -1,23 +1,35 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
+import {Container, Header, Content, Footer, Title} from 'native-base';
+
+import Dashboard from './app/components/dashboard.js';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Container>
+          <Header style={styles.headerStyle}>
+            <Title style={[styles.logoStyle, styles.medText]}>fitThis</Title>
+          </Header>
+          <Content style={styles.content}>
+            <Dashboard/>
+          </Content>
+      </Container>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  headerStyle: {
+    backgroundColor: '#f3f3f5',
+    borderBottomColor: 'transparent',
+  },
+  logoStyle: {
+    color: '#ffaa64',
+    textAlign: 'center',
+    fontFamily: Platform.OS === 'ios' ? 'AvenirNext-Regular' : 'Roboto',
+  },
+  medText: {
+    fontSize: 30,
   },
 });
