@@ -17,9 +17,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#f3f3f5'
   },
   medText: {
     fontSize: 30,
+    color: '#452a32',
     fontFamily: Platform.OS === 'ios' ? 'AvenirNext-Regular' : 'Roboto',
   }
 });
